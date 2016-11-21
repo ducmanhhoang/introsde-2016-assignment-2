@@ -1,0 +1,167 @@
+URL BASE: https://assignment02.herokuapp.com 
+ 
+ ------------- 
+
+ 
+ Request #0: GET [/generate] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><message><content>Table created successfully</content></message> 
+ 
+ ------------- 
+
+ 
+ Request #1: GET [/person] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapPeople><person><personId>1</personId><firstname>Changed_JSON at 2016-11-15 20:39:08</firstname><lastname>Le</lastname><birthdate>1988-10-31</birthdate><healthprofile><weight>122.3</weight><height>2.09</height></healthprofile></person><person><personId>2</personId><firstname>Giang</firstname><lastname>Pham</lastname><birthdate>1977-1-19</birthdate><healthprofile><weight>129.72</weight><height>1.93</height></healthprofile></person><person><personId>3</personId><firstname>Thai</firstname><lastname>Pham</lastname><birthdate>1987-11-3</birthdate><healthprofile><weight>111.94</weight><height>2.04</height></healthprofile></person><person><personId>4</personId><firstname>Giang</firstname><lastname>Dinh</lastname><birthdate>1960-1-16</birthdate><healthprofile><weight>123.47</weight><height>2.09</height></healthprofile></person><person><personId>5</personId><firstname>Thu</firstname><lastname>Trinh</lastname><birthdate>1982-5-5</birthdate><healthprofile><weight>83.12</weight><height>2.03</height></healthprofile></person><person><personId>6</personId><firstname>Phuong</firstname><lastname>Ly</lastname><birthdate>1998-3-20</birthdate><healthprofile><weight>54.61</weight><height>1.68</height></healthprofile></person><person><personId>7</personId><firstname>Diep</firstname><lastname>Le</lastname><birthdate>1983-6-29</birthdate><healthprofile><weight>61.11</weight><height>2.01</height></healthprofile></person><person><personId>8</personId><firstname>Linh</firstname><lastname>Ly</lastname><birthdate>1981-11-17</birthdate><healthprofile><weight>113.11</weight><height>2.19</height></healthprofile></person><person><personId>9</personId><firstname>Nam</firstname><lastname>Dao</lastname><birthdate>1993-8-20</birthdate><healthprofile><weight>114.17</weight><height>1.65</height></healthprofile></person><person><personId>10</personId><firstname>Diep</firstname><lastname>Pham</lastname><birthdate>1989-4-12</birthdate><healthprofile><weight>44.0</weight><height>2.1</height></healthprofile></person></mapPeople> 
+ 
+ ------------- 
+
+ 
+ Request #2: GET [/person/1] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><personId>1</personId><firstname>Changed_JSON at 2016-11-15 20:39:08</firstname><lastname>Le</lastname><birthdate>1988-10-31</birthdate><healthprofile><weight>122.3</weight><height>2.09</height></healthprofile></person> 
+ 
+ ------------- 
+
+ 
+ Request #3: [PUT] [/person/1] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><personId>1</personId><firstname>Changed_XML at 2016-11-15 20:40:10</firstname><lastname>Le</lastname><birthdate>1988-10-31</birthdate><healthprofile><weight>122.3</weight><height>2.09</height></healthprofile></person> 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><birthdate>1988-10-31</birthdate><email>long.le@gmail.com</email><idPerson>1</idPerson><lastname>Le</lastname><Measurements><lifeStatus><idMeasure>1</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>122.3</value></lifeStatus><lifeStatus><idMeasure>2</idMeasure><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><value>2.09</value></lifeStatus><lifeStatus><idMeasure>3</idMeasure><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><value>86.29</value></lifeStatus><lifeStatus><idMeasure>4</idMeasure><measureDefinition><idMeasureDef>4</idMeasureDef><measureName>blood pressure</measureName><measureType>double</measureType></measureDefinition><value>93.91</value></lifeStatus><lifeStatus><idMeasure>5</idMeasure><measureDefinition><idMeasureDef>5</idMeasureDef><measureName>heart rate</measureName><measureType>integer</measureType></measureDefinition><value>149.45</value></lifeStatus><lifeStatus><idMeasure>6</idMeasure><measureDefinition><idMeasureDef>6</idMeasureDef><measureDefaultRange><alarmLevel>1</alarmLevel><endValue>30</endValue><idRange>1</idRange><rangeName>Overweight</rangeName><startValue>25.01</startValue></measureDefaultRange><measureDefaultRange><alarmLevel>2</alarmLevel><idRange>2</idRange><rangeName>Obesity</rangeName><startValue>30.01</startValue></measureDefaultRange><measureDefaultRange><alarmLevel>0</alarmLevel><endValue>25</endValue><idRange>3</idRange><rangeName>Normal weight</rangeName><startValue>20.01</startValue></measureDefaultRange><measureDefaultRange><alarmLevel>1</alarmLevel><endValue>20</endValue><idRange>4</idRange><rangeName>Underweight</rangeName></measureDefaultRange><measureName>bmi</measureName><measureType>double</measureType></measureDefinition><value>123.67</value></lifeStatus></Measurements><name>Changed_XML at 2016-11-15 20:40:10</name><username>long.le</username></person> 
+ 
+ ------------- 
+
+ 
+ Request #4: [POST] [/person] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><birthdate>2000-03-22</birthdate><email></email><idPerson>1903</idPerson><lastname>XML</lastname><Measurements><lifeStatus><idMeasure>2361</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>78.0</value></lifeStatus><lifeStatus><idMeasure>2362</idMeasure><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><value>1.67</value></lifeStatus></Measurements><name>Person at 2016-11-15 20:40:11</name><username></username></person> 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><birthdate>2000-03-22</birthdate><email></email><idPerson>1903</idPerson><lastname>XML</lastname><Measurements><lifeStatus><idMeasure>2361</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>78.0</value></lifeStatus><lifeStatus><idMeasure>2362</idMeasure><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><value>1.67</value></lifeStatus></Measurements><name>Person at 2016-11-15 20:40:11</name><username></username></person> 
+ 
+ ------------- 
+
+ 
+ Request #5: [DELETE] [/person/1903] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><message><content>Deleting is completed!</content></message> 
+
+ Request #5: GET [/person/1903] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 500 
+ 
+ ------------- 
+
+ 
+ Request #6: GET [/measureTypes/] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><measureTypes><measureType>weight</measureType><measureType>height</measureType><measureType>steps</measureType><measureType>blood pressure</measureType><measureType>heart rate</measureType><measureType>bmi</measureType></measureTypes> 
+ 
+ ------------- 
+
+ 
+
+ Request #7: GET [/person/1/weight] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>1</mid><value>52.18</value><created>2008-9-13</created></measure><measure><mid>2</mid><value>108.7</value><created>2005-3-4</created></measure><measure><mid>3</mid><value>75.11</value><created>2008-3-8</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/1/height] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>4</mid><value>2.13</value><created>2007-9-8</created></measure><measure><mid>5</mid><value>2.1</value><created>2002-2-13</created></measure><measure><mid>6</mid><value>2.06</value><created>2005-7-2</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/1/steps] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>7</mid><value>97.92</value><created>2009-10-9</created></measure><measure><mid>8</mid><value>97.63</value><created>2013-8-16</created></measure><measure><mid>9</mid><value>108.12</value><created>2010-6-29</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/1/blood pressure] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>10</mid><value>121.72</value><created>2001-8-31</created></measure><measure><mid>11</mid><value>116.98</value><created>2001-12-31</created></measure><measure><mid>12</mid><value>104.06</value><created>2009-11-18</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/1/heart rate] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>13</mid><value>62.55</value><created>2013-2-26</created></measure><measure><mid>14</mid><value>148.24</value><created>2008-7-22</created></measure><measure><mid>15</mid><value>102.31</value><created>2010-2-2</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/1/bmi] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>16</mid><value>62.51</value><created>2010-6-3</created></measure><measure><mid>17</mid><value>112.84</value><created>2005-8-6</created></measure><measure><mid>18</mid><value>146.74</value><created>2009-10-18</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/10/weight] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>163</mid><value>118.08</value><created>2016-11-15 20:39:17</created></measure><measure><mid>164</mid><value>135.81</value><created>2012-6-26</created></measure><measure><mid>165</mid><value>128.92</value><created>2003-9-10</created></measure><measure><mid>551</mid><value>82.19</value><created>2016-11-15 19:38:59</created></measure><measure><mid>552</mid><value>75</value><created>2016-11-15 19:39:17</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/10/height] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>166</mid><value>1.63</value><created>2010-3-23</created></measure><measure><mid>167</mid><value>1.75</value><created>2001-6-17</created></measure><measure><mid>168</mid><value>2.05</value><created>2002-11-22</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/10/steps] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>169</mid><value>64.88</value><created>2009-6-16</created></measure><measure><mid>170</mid><value>122.58</value><created>2009-1-15</created></measure><measure><mid>171</mid><value>99.26</value><created>2013-9-4</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/10/blood pressure] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>172</mid><value>96.47</value><created>2012-6-10</created></measure><measure><mid>173</mid><value>117.63</value><created>2012-12-18</created></measure><measure><mid>174</mid><value>109.3</value><created>2010-11-3</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/10/heart rate] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>175</mid><value>63.77</value><created>2003-6-23</created></measure><measure><mid>176</mid><value>135.44</value><created>2014-12-21</created></measure><measure><mid>177</mid><value>81.67</value><created>2011-2-11</created></measure></mapHealthMeasureHistories> 
+
+ Request #7: GET [/person/10/bmi] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>178</mid><value>98.02</value><created>2004-2-6</created></measure><measure><mid>179</mid><value>85.66</value><created>2004-1-26</created></measure><measure><mid>180</mid><value>112.53</value><created>2007-12-10</created></measure></mapHealthMeasureHistories> 
+=> Result:OK 
+ 
+ ------------- 
+
+ 
+ Request #8: GET [/person/10/weight/163] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><measure><mid>163</mid><value>118.08</value><created>2016-11-15 20:39:17</created></measure> 
+ 
+ ------------- 
+
+ 
+ Request #9: GET [/person/10/weight] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>163</mid><value>118.08</value><created>2016-11-15 20:39:17</created></measure><measure><mid>164</mid><value>135.81</value><created>2012-6-26</created></measure><measure><mid>165</mid><value>128.92</value><created>2003-9-10</created></measure><measure><mid>551</mid><value>82.19</value><created>2016-11-15 19:38:59</created></measure><measure><mid>552</mid><value>75</value><created>2016-11-15 19:39:17</created></measure></mapHealthMeasureHistories> 
+
+ Request #9: [POST] [/person/10/weight] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+<measure> <value>75</value> <created>2016-11-15</created> </measure> 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><person><birthdate>1989-4-12</birthdate><email>diep.pham@gmail.com</email><idPerson>10</idPerson><lastname>Pham</lastname><Measurements><lifeStatus><idMeasure>55</idMeasure><measureDefinition><idMeasureDef>1</idMeasureDef><measureName>weight</measureName><measureType>double</measureType></measureDefinition><value>75</value></lifeStatus><lifeStatus><idMeasure>56</idMeasure><measureDefinition><idMeasureDef>2</idMeasureDef><measureName>height</measureName><measureType>double</measureType></measureDefinition><value>2.1</value></lifeStatus><lifeStatus><idMeasure>57</idMeasure><measureDefinition><idMeasureDef>3</idMeasureDef><measureName>steps</measureName><measureType>integer</measureType></measureDefinition><value>86.93</value></lifeStatus><lifeStatus><idMeasure>58</idMeasure><measureDefinition><idMeasureDef>4</idMeasureDef><measureName>blood pressure</measureName><measureType>double</measureType></measureDefinition><value>123.91</value></lifeStatus><lifeStatus><idMeasure>59</idMeasure><measureDefinition><idMeasureDef>5</idMeasureDef><measureName>heart rate</measureName><measureType>integer</measureType></measureDefinition><value>131.95</value></lifeStatus><lifeStatus><idMeasure>60</idMeasure><measureDefinition><idMeasureDef>6</idMeasureDef><measureDefaultRange><alarmLevel>1</alarmLevel><endValue>30</endValue><idRange>1</idRange><rangeName>Overweight</rangeName><startValue>25.01</startValue></measureDefaultRange><measureDefaultRange><alarmLevel>2</alarmLevel><idRange>2</idRange><rangeName>Obesity</rangeName><startValue>30.01</startValue></measureDefaultRange><measureDefaultRange><alarmLevel>0</alarmLevel><endValue>25</endValue><idRange>3</idRange><rangeName>Normal weight</rangeName><startValue>20.01</startValue></measureDefaultRange><measureDefaultRange><alarmLevel>1</alarmLevel><endValue>20</endValue><idRange>4</idRange><rangeName>Underweight</rangeName></measureDefaultRange><measureName>bmi</measureName><measureType>double</measureType></measureDefinition><value>96.27</value></lifeStatus></Measurements><name>Diep</name><username>diep.pham</username></person> 
+
+ Request #9: GET [/person/10/weight] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories><measure><mid>163</mid><value>118.08</value><created>2016-11-15 20:39:17</created></measure><measure><mid>164</mid><value>135.81</value><created>2012-6-26</created></measure><measure><mid>165</mid><value>128.92</value><created>2003-9-10</created></measure><measure><mid>551</mid><value>82.19</value><created>2016-11-15 19:38:59</created></measure><measure><mid>552</mid><value>75</value><created>2016-11-15 19:39:17</created></measure><measure><mid>553</mid><value>44</value><created>2016-11-15 19:40:19</created></measure></mapHealthMeasureHistories> 
+ 
+ ------------- 
+
+ 
+ Request #10: [PUT] [/person/10/weight/163] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><measure><mid>163</mid><value>118.08</value><created>2016-11-15 20:39:17</created></measure> 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><measure><mid>163</mid><value>118.08</value><created>2016-11-15 20:40:20</created></measure> 
+ 
+ ------------- 
+
+ 
+ Request #11: GET [/person/10/weight] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapHealthMeasureHistories></mapHealthMeasureHistories> 
+ 
+ ------------- 
+
+ 
+ Request #12: GET [/person] Accept: APPLICATION_XML Content-type: APPLICATION_XML 
+=> Result:OK 
+=> HTTP Status: 200 
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?><mapPeople><person><personId>3</personId><firstname>Thai</firstname><lastname>Pham</lastname><birthdate>1987-11-3</birthdate><healthprofile><weight>111.94</weight><height>2.04</height></healthprofile></person><person><personId>4</personId><firstname>Giang</firstname><lastname>Dinh</lastname><birthdate>1960-1-16</birthdate><healthprofile><weight>123.47</weight><height>2.09</height></healthprofile></person><person><personId>4</personId><firstname>Giang</firstname><lastname>Dinh</lastname><birthdate>1960-1-16</birthdate><healthprofile><weight>123.47</weight><height>2.09</height></healthprofile></person><person><personId>5</personId><firstname>Thu</firstname><lastname>Trinh</lastname><birthdate>1982-5-5</birthdate><healthprofile><weight>83.12</weight><height>2.03</height></healthprofile></person><person><personId>6</personId><firstname>Phuong</firstname><lastname>Ly</lastname><birthdate>1998-3-20</birthdate><healthprofile><weight>54.61</weight><height>1.68</height></healthprofile></person><person><personId>7</personId><firstname>Diep</firstname><lastname>Le</lastname><birthdate>1983-6-29</birthdate><healthprofile><weight>61.11</weight><height>2.01</height></healthprofile></person><person><personId>8</personId><firstname>Linh</firstname><lastname>Ly</lastname><birthdate>1981-11-17</birthdate><healthprofile><weight>113.11</weight><height>2.19</height></healthprofile></person><person><personId>9</personId><firstname>Nam</firstname><lastname>Dao</lastname><birthdate>1993-8-20</birthdate><healthprofile><weight>114.17</weight><height>1.65</height></healthprofile></person><person><personId>9</personId><firstname>Nam</firstname><lastname>Dao</lastname><birthdate>1993-8-20</birthdate><healthprofile><weight>114.17</weight><height>1.65</height></healthprofile></person><person><personId>10</personId><firstname>Diep</firstname><lastname>Pham</lastname><birthdate>1989-4-12</birthdate><healthprofile><weight>75.0</weight><height>2.1</height></healthprofile></person><person><personId>10</personId><firstname>Diep</firstname><lastname>Pham</lastname><birthdate>1989-4-12</birthdate><healthprofile><weight>75.0</weight><height>2.1</height></healthprofile></person><person><personId>10</personId><firstname>Diep</firstname><lastname>Pham</lastname><birthdate>1989-4-12</birthdate><healthprofile><weight>75.0</weight><height>2.1</height></healthprofile></person></mapPeople> 
+ 
+ END 

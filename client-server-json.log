@@ -1,0 +1,167 @@
+URL BASE: https://assignment02.herokuapp.com 
+ 
+ ------------- 
+
+ 
+ Request #0: GET [/generate] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> Result:OK 
+=> HTTP Status: 200 
+{"content":"Table created successfully"} 
+ 
+ ------------- 
+
+ 
+ Request #1: GET [/person] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> Result:OK 
+=> HTTP Status: 200 
+[{"personId":1,"firstname":"Changed_XML at 2016-11-15 20:40:10","lastname":"Le","birthdate":"1988-10-31","healthprofile":{"weight":122.3,"height":2.09}},{"personId":2,"firstname":"Giang","lastname":"Pham","birthdate":"1977-1-19","healthprofile":{"weight":129.72,"height":1.93}},{"personId":3,"firstname":"Thai","lastname":"Pham","birthdate":"1987-11-3","healthprofile":{"weight":111.94,"height":2.04}},{"personId":4,"firstname":"Giang","lastname":"Dinh","birthdate":"1960-1-16","healthprofile":{"weight":123.47,"height":2.09}},{"personId":5,"firstname":"Thu","lastname":"Trinh","birthdate":"1982-5-5","healthprofile":{"weight":83.12,"height":2.03}},{"personId":6,"firstname":"Phuong","lastname":"Ly","birthdate":"1998-3-20","healthprofile":{"weight":54.61,"height":1.68}},{"personId":7,"firstname":"Diep","lastname":"Le","birthdate":"1983-6-29","healthprofile":{"weight":61.11,"height":2.01}},{"personId":8,"firstname":"Linh","lastname":"Ly","birthdate":"1981-11-17","healthprofile":{"weight":113.11,"height":2.19}},{"personId":9,"firstname":"Nam","lastname":"Dao","birthdate":"1993-8-20","healthprofile":{"weight":114.17,"height":1.65}},{"personId":10,"firstname":"Diep","lastname":"Pham","birthdate":"1989-4-12","healthprofile":{"weight":75.0,"height":2.1}}] 
+ 
+ ------------- 
+
+ 
+ Request #2: GET [/person/1] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> Result:OK 
+=> HTTP Status: 200 
+{"personId":1,"firstname":"Changed_XML at 2016-11-15 20:40:10","lastname":"Le","birthdate":"1988-10-31","healthprofile":{"weight":122.3,"height":2.09}} 
+ 
+ ------------- 
+
+ 
+ Request #3: [PUT] [/person/1] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+{"firstname":"Changed_JSON at 2016-11-15 20:40:27","healthprofile":{"weight":122.3,"height":2.09},"birthdate":"1988-10-31","personId":1,"lastname":"Le"} 
+=> Result:OK 
+=> HTTP Status: 200 
+{"firstname":"Changed_JSON at 2016-11-15 20:40:27","healthprofile":{"weight":122.3,"height":2.09},"birthdate":"1988-10-31","personId":1,"lastname":"Le"} 
+ 
+ ------------- 
+
+ 
+ Request #4: [POST] [/person] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+{"firstname": "Person at 2016-11-15 20:40:28", "lastname": "New", "birthdate": "1945-01-01", "healthprofile": { "weight": 86, "height": 1.72 }} 
+=> Result:OK 
+=> HTTP Status: 200 
+{"idPerson":1904,"lastname":"New","name":"Person at 2016-11-15 20:40:28","username":"","birthdate":"1945-01-01","email":"","lifeStatus":[{"idMeasure":2363,"value":"86.0","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double","measureDefaultRange":[]}},{"idMeasure":2364,"value":"1.72","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double","measureDefaultRange":[]}}]} 
+ 
+ ------------- 
+
+ 
+ Request #5: [DELETE] [/person/1904] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+{"content":"Deleting is completed!"} 
+
+ Request #5: GET [/person/1904] Accept: [APPLICATION_XML] Content-type: [APPLICATION_XML] 
+=> Result:OK 
+=> HTTP Status: 500 
+ 
+ ------------- 
+
+ 
+ Request #6: GET [/measureTypes/] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> Result:OK 
+=> HTTP Status: 200 
+{"measureType":["weight","height","steps","blood pressure","heart rate","bmi"]} 
+ 
+ ------------- 
+
+ 
+
+ Request #7: GET [/person/1/weight] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":1,"value":"52.18","created":"2008-9-13"},{"mid":2,"value":"108.7","created":"2005-3-4"},{"mid":3,"value":"75.11","created":"2008-3-8"}] 
+
+ Request #7: GET [/person/1/height] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":4,"value":"2.13","created":"2007-9-8"},{"mid":5,"value":"2.1","created":"2002-2-13"},{"mid":6,"value":"2.06","created":"2005-7-2"}] 
+
+ Request #7: GET [/person/1/steps] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":7,"value":"97.92","created":"2009-10-9"},{"mid":8,"value":"97.63","created":"2013-8-16"},{"mid":9,"value":"108.12","created":"2010-6-29"}] 
+
+ Request #7: GET [/person/1/blood pressure] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":10,"value":"121.72","created":"2001-8-31"},{"mid":11,"value":"116.98","created":"2001-12-31"},{"mid":12,"value":"104.06","created":"2009-11-18"}] 
+
+ Request #7: GET [/person/1/heart rate] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":13,"value":"62.55","created":"2013-2-26"},{"mid":14,"value":"148.24","created":"2008-7-22"},{"mid":15,"value":"102.31","created":"2010-2-2"}] 
+
+ Request #7: GET [/person/1/bmi] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":16,"value":"62.51","created":"2010-6-3"},{"mid":17,"value":"112.84","created":"2005-8-6"},{"mid":18,"value":"146.74","created":"2009-10-18"}] 
+
+ Request #7: GET [/person/10/weight] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":163,"value":"118.08","created":"2016-11-15 20:40:20"},{"mid":164,"value":"135.81","created":"2012-6-26"},{"mid":165,"value":"128.92","created":"2003-9-10"},{"mid":551,"value":"82.19","created":"2016-11-15 19:38:59"},{"mid":552,"value":"75","created":"2016-11-15 19:39:17"},{"mid":553,"value":"44","created":"2016-11-15 19:40:19"}] 
+
+ Request #7: GET [/person/10/height] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":166,"value":"1.63","created":"2010-3-23"},{"mid":167,"value":"1.75","created":"2001-6-17"},{"mid":168,"value":"2.05","created":"2002-11-22"}] 
+
+ Request #7: GET [/person/10/steps] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":169,"value":"64.88","created":"2009-6-16"},{"mid":170,"value":"122.58","created":"2009-1-15"},{"mid":171,"value":"99.26","created":"2013-9-4"}] 
+
+ Request #7: GET [/person/10/blood pressure] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":172,"value":"96.47","created":"2012-6-10"},{"mid":173,"value":"117.63","created":"2012-12-18"},{"mid":174,"value":"109.3","created":"2010-11-3"}] 
+
+ Request #7: GET [/person/10/heart rate] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":175,"value":"63.77","created":"2003-6-23"},{"mid":176,"value":"135.44","created":"2014-12-21"},{"mid":177,"value":"81.67","created":"2011-2-11"}] 
+
+ Request #7: GET [/person/10/bmi] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":178,"value":"98.02","created":"2004-2-6"},{"mid":179,"value":"85.66","created":"2004-1-26"},{"mid":180,"value":"112.53","created":"2007-12-10"}] 
+=> Result:OK 
+ 
+ ------------- 
+
+ 
+ Request #8: GET [/person/10/weight/163] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> Result:OK 
+=> HTTP Status: 200 
+{"mid":163,"value":"118.08","created":"2016-11-15 20:40:20"} 
+ 
+ ------------- 
+
+ 
+ Request #9: GET [/person/10/weight] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> HTTP Status: 200 
+[{"mid":163,"value":"118.08","created":"2016-11-15 20:40:20"},{"mid":164,"value":"135.81","created":"2012-6-26"},{"mid":165,"value":"128.92","created":"2003-9-10"},{"mid":551,"value":"82.19","created":"2016-11-15 19:38:59"},{"mid":552,"value":"75","created":"2016-11-15 19:39:17"},{"mid":553,"value":"44","created":"2016-11-15 19:40:19"}] 
+
+ Request #9: [POST] [/person/10/weight] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+{  "value": 99,  "created": "2016-11-15" }  
+=> HTTP Status: 200 
+{"idPerson":10,"lastname":"Pham","name":"Diep","username":"diep.pham","birthdate":"1989-4-12","email":"diep.pham@gmail.com","lifeStatus":[{"idMeasure":55,"value":"99","measureDefinition":{"idMeasureDef":1,"measureName":"weight","measureType":"double","measureDefaultRange":[]}},{"idMeasure":56,"value":"2.1","measureDefinition":{"idMeasureDef":2,"measureName":"height","measureType":"double","measureDefaultRange":[]}},{"idMeasure":57,"value":"86.93","measureDefinition":{"idMeasureDef":3,"measureName":"steps","measureType":"integer","measureDefaultRange":[]}},{"idMeasure":58,"value":"123.91","measureDefinition":{"idMeasureDef":4,"measureName":"blood pressure","measureType":"double","measureDefaultRange":[]}},{"idMeasure":59,"value":"131.95","measureDefinition":{"idMeasureDef":5,"measureName":"heart rate","measureType":"integer","measureDefaultRange":[]}},{"idMeasure":60,"value":"96.27","measureDefinition":{"idMeasureDef":6,"measureName":"bmi","measureType":"double","measureDefaultRange":[{"idRange":1,"rangeName":"Overweight","startValue":"25.01","alarmLevel":"1","endValue":"30"},{"idRange":2,"rangeName":"Obesity","startValue":"30.01","alarmLevel":"2","endValue":null},{"idRange":3,"rangeName":"Normal weight","startValue":"20.01","alarmLevel":"0","endValue":"25"},{"idRange":4,"rangeName":"Underweight","startValue":null,"alarmLevel":"1","endValue":"20"}]}}]} 
+
+ Request #9: GET [/person/10/weight] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> Result:OK 
+=> HTTP Status: 200 
+[{"mid":163,"value":"118.08","created":"2016-11-15 20:40:20"},{"mid":164,"value":"135.81","created":"2012-6-26"},{"mid":165,"value":"128.92","created":"2003-9-10"},{"mid":551,"value":"82.19","created":"2016-11-15 19:38:59"},{"mid":552,"value":"75","created":"2016-11-15 19:39:17"},{"mid":553,"value":"44","created":"2016-11-15 19:40:19"},{"mid":554,"value":"75","created":"2016-11-15 19:40:36"}] 
+ 
+ ------------- 
+
+ 
+ Request #10: [PUT] [/person/10/weight/163] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+{"mid":163,"value":"118.08","created":"2016-11-15 20:40:20"} 
+=> Result:OK 
+=> HTTP Status: 200 
+{"mid":163,"value":"118.08","created":"2016-11-15 20:40:36"} 
+ 
+ ------------- 
+
+ 
+ Request #11: GET [/person/10/weight] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> Result:OK 
+=> HTTP Status: 200 
+[] 
+ 
+ ------------- 
+
+ 
+ Request #12: GET [/person] Accept: APPLICATION_JSON Content-type: APPLICATION_JSON 
+=> Result:OK 
+=> HTTP Status: 200 
+[{"personId":3,"firstname":"Thai","lastname":"Pham","birthdate":"1987-11-3","healthprofile":{"weight":111.94,"height":2.04}},{"personId":4,"firstname":"Giang","lastname":"Dinh","birthdate":"1960-1-16","healthprofile":{"weight":123.47,"height":2.09}},{"personId":4,"firstname":"Giang","lastname":"Dinh","birthdate":"1960-1-16","healthprofile":{"weight":123.47,"height":2.09}},{"personId":5,"firstname":"Thu","lastname":"Trinh","birthdate":"1982-5-5","healthprofile":{"weight":83.12,"height":2.03}},{"personId":6,"firstname":"Phuong","lastname":"Ly","birthdate":"1998-3-20","healthprofile":{"weight":54.61,"height":1.68}},{"personId":7,"firstname":"Diep","lastname":"Le","birthdate":"1983-6-29","healthprofile":{"weight":61.11,"height":2.01}},{"personId":8,"firstname":"Linh","lastname":"Ly","birthdate":"1981-11-17","healthprofile":{"weight":113.11,"height":2.19}},{"personId":9,"firstname":"Nam","lastname":"Dao","birthdate":"1993-8-20","healthprofile":{"weight":114.17,"height":1.65}},{"personId":9,"firstname":"Nam","lastname":"Dao","birthdate":"1993-8-20","healthprofile":{"weight":114.17,"height":1.65}},{"personId":10,"firstname":"Diep","lastname":"Pham","birthdate":"1989-4-12","healthprofile":{"weight":99.0,"height":2.1}},{"personId":10,"firstname":"Diep","lastname":"Pham","birthdate":"1989-4-12","healthprofile":{"weight":99.0,"height":2.1}},{"personId":10,"firstname":"Diep","lastname":"Pham","birthdate":"1989-4-12","healthprofile":{"weight":99.0,"height":2.1}}] 
+ 
+ END 
